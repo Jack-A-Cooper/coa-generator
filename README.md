@@ -58,15 +58,15 @@ Developers interested in contributing should refer to the [Development Guide](DE
 If you want to contribute to the Coats of Arms Generator, please review the [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Versioning
-I use [SemVer](https://semver.org/) for versioning.
+For versioning, I use [SemVer](https://semver.org/).
 
 ## Authors and Acknowledgment
-- **Jack Alexander Cooper [Myself]** - *Initial work* - [GitHub Profile](https://github.com/Jack-A-Cooper)
+- **Jack Alexander Cooper** - *Initial work* - [GitHub Profile](https://github.com/Jack-A-Cooper)
 
-Acknowledgments go out to all contributors who helped with the project.
+Special thanks to OpenAI's ChatGPT for providing AI assistance and guidance.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
 
 ## Screenshots / Demo
 ![Coat of Arms Example](path-to-screenshot.png)
@@ -77,7 +77,7 @@ Add more screenshots or a video demo if possible.
 Here you can list common issues and their solutions.
 
 ## Changelog
-For detailed release notes, see the [CHANGELOG.md](CHANGELOG.md).
+For detailed release notes, see the [CHANGELOG](CHANGELOG).
 
 ## Support or Contact
 For support or inquiries, reach out to [jack_cooper01@yahoo.com](mailto:jack_cooper01@yahoo.com).
