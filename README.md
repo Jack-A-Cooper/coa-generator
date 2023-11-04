@@ -21,25 +21,25 @@
 To install the Coats of Arms Generator, follow these steps:
 
 \```bash
-# Clone the repository
+### Clone the repository
 git clone https://github.com/Jack-A-Cooper/coa-generator.git
 
-# Navigate to the repository
+### Navigate to the repository
 cd coa-generator
 
-# Run the setup script
-# On Linux/MacOS:
+### Run the setup script
+#### On Linux/MacOS:
 ./setup.sh
-# On Windows:
+#### On Windows:
 setup.bat
 \```
 
-## Prerequisites
+### Prerequisites
 Before you begin, ensure you have met the following requirements:
 - Python 3.x
 - pip (Python package installer)
 
-## Usage
+### Usage
 To use the Coats of Arms Generator, run the following command:
 
 \```bash
@@ -160,9 +160,11 @@ coa-generator/
 ```
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
+#TODO
 
 ## Contributing
 If you want to contribute to the Coats of Arms Generator, please review the [`CONTRIBUTING.md`](CONTRIBUTING.md).
+#TODO
 
 ## Versioning
 For versioning, I use [SemVer](https://semver.org/).
@@ -177,14 +179,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) for 
 
 ## Screenshots / Demo
 ![Coat of Arms Example](path-to-screenshot.png)
+#TODO
 
 Add more screenshots or a video demo if possible.
 
 ## FAQs / Common Issues
 Here you can list common issues and their solutions.
+#TODO
 
 ## Changelog
 For detailed release notes, see the [CHANGELOG](CHANGELOG).
+#TODO
 
 ## Support or Contact
 For support or inquiries, reach out to [jack_cooper01@yahoo.com](mailto:jack_cooper01@yahoo.com).
