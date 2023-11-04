@@ -52,7 +52,8 @@ Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage
 Any necessary configuration for the tool should be documented in this section.
 
 ## Directory Structure
-<span style="white-space:nowrap;">coa-generator/
+<span style="nowrap;">
+coa-generator/
 │
 ├── src/
 │   ├── __pycache__/
