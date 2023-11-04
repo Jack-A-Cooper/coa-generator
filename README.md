@@ -53,7 +53,7 @@ Any necessary configuration for the tool should be documented in this section.
 
 ## Directory Structure
 
-<span style="white-space: nowrap;">coa-generator/
+```coa-generator/
 │
 ├── src/
 │   ├── __pycache__/
@@ -88,7 +88,7 @@ Any necessary configuration for the tool should be documented in this section.
 ├── run_windows.bat
 ├── setup.py
 └── setup_windows.bat
-</span>
+```
 
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
