@@ -6,6 +6,8 @@
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Source Documentation](#Source-Documentation)
+- [Directory Structure](#Directory-Structure)
 - [Development](#development)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
@@ -15,7 +17,6 @@
 - [FAQs / Common Issues](#faqs--common-issues)
 - [Changelog](#changelog)
 - [Support or Contact](#support-or-contact)
-- [Code of Conduct](#code-of-conduct)
 
 ## Installation
 To install the Coats of Arms Generator, follow these steps:
@@ -34,12 +35,12 @@ cd coa-generator
 setup.bat
 \```
 
-### Prerequisites
+## Prerequisites
 Before you begin, ensure you have met the following requirements:
 - Python 3.x
 - pip (Python package installer)
 
-### Usage
+## Usage
 To use the Coats of Arms Generator, run the following command:
 
 \```bash
