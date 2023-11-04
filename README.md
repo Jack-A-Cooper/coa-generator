@@ -103,8 +103,5 @@ For detailed release notes, see the [CHANGELOG](CHANGELOG).
 ## Support or Contact
 For support or inquiries, reach out to [jack_cooper01@yahoo.com](mailto:jack_cooper01@yahoo.com).
 
-## Code of Conduct
-We expect contributors to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
-
 ---
 © 2023 Jack Alexander Cooper. All Rights Reserved.
