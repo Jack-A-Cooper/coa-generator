@@ -1,2 +1,0 @@
-Permission denied when trying to remove: .\cleanup_log.txt. Error: [WinError 32] The process cannot access the file because it is being used by another process: '.\\cleanup_log.txt'
-Cleanup completed.
