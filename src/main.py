@@ -24,6 +24,7 @@ def main():
 
     # If you have a rendering function, you could also display the coat of arms visually.
     # coat_of_arms_generator.render_coat_of_arms()
+    coat_of_arms_generator.assemble_coat_of_arms()
 
 if __name__ == "__main__":
     main()
