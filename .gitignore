@@ -156,6 +156,7 @@ cython_debug/
 
 # Keep:
 !requirements.txt
+!src/
 !assets/
 !data/
 !tests/
