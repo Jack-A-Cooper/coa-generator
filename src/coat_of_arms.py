@@ -1,4 +1,5 @@
 # coat_of_arms.py
+import random
 from heraldic_elements import heraldic_elements, check_rule_of_tincture, select_element
 
 class CoatOfArms:
