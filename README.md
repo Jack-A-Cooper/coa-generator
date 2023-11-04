@@ -52,8 +52,8 @@ Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage
 Any necessary configuration for the tool should be documented in this section.
 
 ## Directory Structure
-<span style="nowrap;">
-coa-generator/
+
+`coa-generator/
 │
 ├── src/
 │   ├── __pycache__/
@@ -87,8 +87,8 @@ coa-generator/
 ├── requirements.txt
 ├── run_windows.bat
 ├── setup.py
-└── setup_windows.bat
-</span>
+└── setup_windows.bat`
+
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
 
