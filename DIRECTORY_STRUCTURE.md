@@ -1,9 +1,10 @@
 coa-generator/
 │
-├── assets/
-├── data/
-├── saved_coats_of_arms/
 ├── src/
+│   ├── assets/
+│   ├── data/
+│   ├── saved_coats_of_arms/
+│   ├── tests/
 │   ├── coat_of_arms.py
 │   ├── heraldic_elements.py
 │   ├── main.py
@@ -11,10 +12,10 @@ coa-generator/
 │   ├── saver.py
 │   ├── user_interface.py
 │   └── utils.py
-├── tests/
 ├── cleanup.py
 ├── cleanup_log.txt
 ├── cleanup_windows.bat
+├── DIRECTORY_STRUCTURE.md
 ├── generate_structure.py
 ├── generate_structure_windows.bat
 ├── LICENSE
