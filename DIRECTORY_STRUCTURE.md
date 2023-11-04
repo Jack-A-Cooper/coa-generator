@@ -1,4 +1,3 @@
-```
 coa-generator/
 │
 ├── src/
@@ -35,10 +34,8 @@ coa-generator/
 ├── generate_structure.py
 ├── generate_structure_windows.bat
 ├── LICENSE
-├── New Text Document.txt
 ├── README.md
 ├── requirements.txt
 ├── run_windows.bat
 ├── setup.py
 └── setup_windows.bat
-```

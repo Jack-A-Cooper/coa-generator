@@ -154,6 +154,12 @@ cython_debug/
 # Ignore all text files:
 *.txt
 
+# Ignore all these specific files:
+DIRECTORY_STRUCTURE.md
+generate_structure.py
+generate_structure_windows.bat
+cleanup_log.txt
+
 # Keep:
 !requirements.txt
 !src/
