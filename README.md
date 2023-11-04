@@ -175,7 +175,7 @@ For versioning, I use [SemVer](https://semver.org/).
 ## Authors and Acknowledgment
 - **Jack Alexander Cooper** - *Initial work* - [GitHub Profile](https://github.com/Jack-A-Cooper)
 
-Special thanks to OpenAI's ChatGPT for providing AI assistance and guidance.
+***Special thanks to OpenAI's ChatGPT for providing AI assistance and guidance. Especially for research and automating the workflow when necessary.***
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
