@@ -49,6 +49,8 @@ python main.py
 ***or use the .bat files to run***
 
 Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage.
+
+## Source Documentation
 ```
 - `coa-generator/`: The root directory of the project related to coat of arms (COA) generation.
 
