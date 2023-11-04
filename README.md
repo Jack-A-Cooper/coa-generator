@@ -158,7 +158,6 @@ coa-generator/
 ├── setup.py
 └── setup_windows.bat
 ```
-
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
 
