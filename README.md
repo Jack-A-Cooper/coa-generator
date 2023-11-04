@@ -52,6 +52,7 @@ Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage
 Any necessary configuration for the tool should be documented in this section.
 
 ## Directory Structure
+\```
 coa_generator/
 │
 ├── src/
@@ -71,7 +72,7 @@ coa_generator/
 ├── README.md
 ├── setup.py
 └── (any other root level files like LICENSE, .gitignore, etc.)
-
+\```
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
 
