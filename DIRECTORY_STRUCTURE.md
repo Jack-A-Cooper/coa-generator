@@ -1,3 +1,4 @@
+```
 coa-generator/
 │
 ├── src/
@@ -7,9 +8,16 @@ coa-generator/
 │   │   └── user_interface.cpython-311.pyc
 │   ├── assets/
 │   │   ├── charges/
-│   │   ├── division (shield)/
+│   │   ├── compartment (supporter's compartment)/
+│   │   ├── crest (Crest of Arms)/
+│   │   ├── mantling/
+│   │   ├── motto/
 │   │   ├── ordinaries/
-│   │   └── tinctures/
+│   │   ├── pavilion/
+│   │   ├── ribbon, collar, or badge/
+│   │   ├── shield (division)/
+│   │   ├── tinctures/
+│   │   └── torse (coronet)/
 │   ├── data/
 │   ├── saved_coats_of_arms/
 │   ├── tests/
@@ -23,13 +31,14 @@ coa-generator/
 ├── cleanup.py
 ├── cleanup_log.txt
 ├── cleanup_windows.bat
-├── coa_generating_readme.md
 ├── DIRECTORY_STRUCTURE.md
 ├── generate_structure.py
 ├── generate_structure_windows.bat
 ├── LICENSE
+├── New Text Document.txt
 ├── README.md
 ├── requirements.txt
 ├── run_windows.bat
 ├── setup.py
 └── setup_windows.bat
+```
