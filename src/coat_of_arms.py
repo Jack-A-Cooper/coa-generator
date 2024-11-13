@@ -46,6 +46,7 @@ HERALDIC_COLORS = {
     'Realistic': {
         'Proper': (0, 0, 0),              # Proper color (usually naturalistic representation)
         'Carnation': (255, 182, 193)      # Light pink
+    }
 }
 
 class CoatOfArms:
@@ -117,7 +118,7 @@ class CoatOfArms:
         if ordinary == 'Bend':
             # Draw a diagonal line from top left to bottom right
             draw.line((0, 0, width, height), fill='black', width=10)
-         if ordinary == 'Chevron':
+        if ordinary == 'Chevron':
             self.draw_division_chevron(draw, width, height)
         # ... handle other ordinaries ...
 

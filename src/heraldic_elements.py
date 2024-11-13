@@ -23,16 +23,14 @@ heraldic_elements = {
     ],
     "charges": {
         "animals": [
-            Charge("Lion", "path/to/lion/image.png", "Bravery"),
-            Charge("Eagle", "path/to/eagle/image.png", "Perspective and clarity"),
-            Charge("Wolf", "path/to/wolf/image.png", "Ferocity and strength"),
-            Charge("Dragon", "path/to/dragon/image.png", "Protection and power"),
+            Charge("crow", "./assets/charges/crow.svg", "crow"),
+            Charge("eagle", "./assets/charges/eagle.svg", "eagle"),
         ],
         "objects": [
-            Charge("Sword", "path/to/sword/image.png", "Justice and military honour"),
-            Charge("Castle", "path/to/castle/image.png", "Safety and home"),
-            Charge("Crown", "path/to/crown/image.png", "Authority and royalty"),
-            Charge("Anchor", "path/to/anchor/image.png", "Hope and steadfastness"),
+            Charge("tower", "./assets/charges/tower.svg", "tower"),
+            Charge("cross moline", "./assets/charges/cross moline.svg", "cross moline"),
+            Charge("rose", "./assets/charges/rose.svg", "rose"),
+            Charge("scimitar", "./assets/charges/scimitar.svg", "scimitar"),
         ]
     },
     "ordinaries": [
