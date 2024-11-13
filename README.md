@@ -11,7 +11,7 @@
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
-- [Configuration](#configuration)
+- [Examples](#examples)
 - [Source Documentation](#Source-Documentation)
 - [Directory Structure](#Directory-Structure)
 - [Development](#development)
@@ -56,6 +56,20 @@ python main.py
 ***or use the .bat files to run***
 
 Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage.
+
+## Examples
+
+<p align="center">
+  <img src="resources/examples/coa gen example 2.png" alt="COA Gen Example 2">
+  <img src="resources/examples/coa gen example 3.png" alt="COA Gen Example 3">
+  <img src="resources/examples/coa gen example 4.png" alt="COA Gen Example 4">
+  <img src="resources/examples/coa gen example 5.png" alt="COA Gen Example 5">
+  <img src="resources/examples/coa gen example 6.png" alt="COA Gen Example 6">
+  <img src="resources/examples/coa gen example 7.png" alt="COA Gen Example 7">
+  <img src="resources/examples/coa gen example 8.png" alt="COA Gen Example 8">
+  <img src="resources/examples/coa gen example 9.png" alt="COA Gen Example 9">
+  <img src="resources/examples/coa gen example 10.png" alt="COA Gen Example 10">
+</p>
 
 ## Source Documentation
 ```
