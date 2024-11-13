@@ -22,7 +22,16 @@ expected_structure = {
     ],
     'resources/examples': [
         '__init__.py',
-        'coa gen example.png'
+        'coa gen example.png',
+        'coa gen example 2.png',
+        'coa gen example 3.png',
+        'coa gen example 4.png',
+        'coa gen example 5.png',
+        'coa gen example 6.png',
+        'coa gen example 7.png',
+        'coa gen example 8.png',
+        'coa gen example 9.png',
+        'coa gen example 10.png'
     ],
     'saved': [
         '__init__.py'
