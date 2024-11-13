@@ -5,6 +5,21 @@ from tkinter import messagebox
 
 # Define the expected structure based on setup script
 expected_structure = {
+    'assets': [
+        'charges'
+    ],
+    'assets/charges': [
+        '__init__.py',
+        'cross moline.svg',
+        'crow.svg',
+        'eagle.svg',
+        'rose.svg',
+        'scimitar.svg',
+        'tower.svg'
+    ],
+    'saved': [
+        '__init__.py'
+    ],
     'src': [
         'main.py',
         'coat_of_arms.py',
@@ -17,7 +32,7 @@ expected_structure = {
     ],
     'src/tests': [
         '__init__.py'
-    ]
+    ],
 }
 
 # Files and directories to keep at the root level
@@ -30,52 +45,57 @@ ignore_no_extension = {'LICENSE', 'CONTRIBUTING', 'CODE_OF_CONDUCT'}
 # Directories to exclude from cleanup
 exclude_dirs = {'.git', '.venv', '__pycache__'}
 
+# Directories to preserve completely (do not delete any files within)
+preserve_dirs = {'saved', 'assets', 'assets/charges'}
+
 # Log file to record deleted files
 log_file = 'cleanup_log.txt'
 
-def count_removals(directory, expected_contents, keepers=set()):
-    """ Count the number of files and directories that will be removed. """
-    total_removals = 0
+def get_removal_list(directory, expected_contents, keepers=set()):
+    """ Generate a list of files and directories that will be removed. """
+    removal_list = []
     actual_contents = set(os.listdir(directory))
     expected_contents = set(expected_contents).union(keepers).union(exclude_dirs)
 
     for content in actual_contents:
+        path_to_check = os.path.join(directory, content)
+        if content in preserve_dirs or os.path.commonpath([path_to_check]) in preserve_dirs:
+            continue
         if content not in expected_contents:
-            path_to_check = os.path.join(directory, content)
             if os.path.isdir(path_to_check) and content in exclude_dirs:
                 continue
             if any(content.endswith(ext) for ext in ignore_extensions) or content in ignore_no_extension:
                 continue
-            # If it's a directory, we recursively count its contents
+            # If it's a directory, we recursively add its contents to the removal list
             if os.path.isdir(path_to_check):
-                total_removals += 1  # for the directory itself
+                removal_list.append(path_to_check)  # Add the directory itself
                 for root, dirs, files in os.walk(path_to_check):
-                    total_removals += len(files)
-                    total_removals += len([d for d in dirs if d not in exclude_dirs])
+                    for name in files:
+                        removal_list.append(os.path.join(root, name))
+                    for name in dirs:
+                        if name not in exclude_dirs:
+                            removal_list.append(os.path.join(root, name))
             else:
-                total_removals += 1
-    return total_removals
+                removal_list.append(path_to_check)
+    return removal_list
 
-
-# The count_removals function appears to be correctly implemented.
-
-# Make sure to update the cleanup_directory function as follows:
 def cleanup_directory(directory, expected_contents, keepers=set(), log_handle=None):
     """ Remove unexpected files and directories in the given directory and log the actions """
-    # Set operations are used directly to determine unexpected contents
     actual_contents = set(os.listdir(directory))
     keepers = set(keepers)
     exclude_dirs_set = set(exclude_dirs)
     
     # Create a combined set of items to keep
     to_keep = expected_contents.union(keepers).union(exclude_dirs_set)
-    
+
     # Calculate the items to remove
     to_remove = actual_contents - to_keep
 
     for content in to_remove:
         path_to_remove = os.path.join(directory, content)
-        # The 'continue' logic is fine here
+        # Skip if it's in the preserve_dirs
+        if content in preserve_dirs or os.path.commonpath([path_to_remove]) in preserve_dirs:
+            continue
         if any(content.endswith(ext) for ext in ignore_extensions) or content in ignore_no_extension:
             continue  # Skip ignored file types
         try:
@@ -92,20 +112,31 @@ def cleanup_directory(directory, expected_contents, keepers=set(), log_handle=No
                 log_handle.write(f"Permission denied when trying to remove: {path_to_remove}. Error: {e}\n")
 
 def main():
-    total_removals = count_removals('.', set(), root_level_keepers)
+    # Generate the list of items to be removed
+    removal_list = get_removal_list('.', set(), root_level_keepers)
     for directory, contents in expected_structure.items():
         full_path = os.path.join('.', directory)
         if os.path.exists(full_path):
-            total_removals += count_removals(full_path, set(contents))
+            removal_list.extend(get_removal_list(full_path, set(contents)))
 
     # Initialize Tkinter root window
     root = tk.Tk()
     root.withdraw()  # Hide the root window
 
+    # Display the list of items to be removed
+    if removal_list:
+        removal_list_str = "\n".join(removal_list)
+        messagebox.showinfo(
+            "Files/Directories to be Removed",
+            f"The following files/directories will be removed:\n\n{removal_list_str}"
+        )
+    else:
+        messagebox.showinfo("Cleanup", "No files or directories to remove.")
+
     # Ask user for confirmation before cleanup
     response = messagebox.askyesno(
         "Confirm Cleanup",
-        f"This will remove {total_removals} files/dirs not conforming to the setup. Proceed?"
+        f"This will remove {len(removal_list)} items. Proceed?"
     )
 
     # Destroy the Tkinter root window

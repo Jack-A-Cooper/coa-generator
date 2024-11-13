@@ -1,7 +1,45 @@
 # heraldic_elements.py
-# Defines the elements and rules for heraldry within the coat of arms generation system
 
+import os
 import random
+
+# Dictionary of Heraldic Colors
+HERALDIC_COLORS = {
+    'Metals': {
+        'Argent': (255, 255, 255), # Silver (often represented with white)
+        'Or': (255, 215, 0)       # Gold (often represented with yellow)
+    },
+    'Colours': {
+        'Gules': (255, 0, 0),     # Red
+        'Sable': (0, 0, 0),       # Black
+        'Azure': (0, 0, 255),     # Blue
+        'Vert': (0, 128, 0),      # Green
+        'Purpure': (128, 0, 128)  # Purple
+    },
+    'Furs': {
+        'Ermine': (252, 252, 252),   # White with black spots (stoat fur)
+        'Ermines': (0, 0, 0),        # Black with white spots
+        'Erminois': (255, 215, 0),   # Gold with black spots
+        'Pean': (0, 0, 0),           # Black with gold spots
+        'Vair': (173, 216, 230),     # Blue-grey and white
+        'Potent': (173, 216, 230)    # Variant of vair
+    }
+}
+
+# Helper function to get RGB color from HERALDIC_COLORS
+def get_rgb_color(tincture_name):
+    for category in HERALDIC_COLORS.values():
+        if tincture_name in category:
+            return category[tincture_name]
+    return (255, 255, 255)  # Default to white if color not found
+
+def check_rule_of_tincture(tincture1, tincture2):
+    colors = heraldic_elements['tinctures']['colors']
+    metals = heraldic_elements['tinctures']['metals']
+    
+    if (tincture1 in colors and tincture2 in colors) or (tincture1 in metals and tincture2 in metals):
+        return False
+    return True
 
 class Charge:
     def __init__(self, name, image_path, symbolism):
@@ -12,60 +50,31 @@ class Charge:
     def __repr__(self):
         return f"{self.name} ({self.symbolism})"
 
-# Defining possible tinctures, divisions, and charges with their symbolism
+def load_charges(directory='../assets/charges'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f"Directory '{directory}' does not exist.")
+    charges = []
+    for filename in os.listdir(directory):
+        if filename.endswith('.svg'):
+            name = os.path.splitext(filename)[0]
+            path = os.path.join(directory, filename)
+            charges.append(Charge(name, path, name))
+    return charges
+
 heraldic_elements = {
     "tinctures": {
-        "colors": ["Gules", "Azure", "Vert", "Sable"],
-        "metals": ["Or", "Argent"]
+        "colors": ["Gules", "Azure", "Vert", "Sable", "Purpure"],
+        "metals": ["Or", "Argent"],
+        "furs": ["Ermine", "Ermines", "Erminois", "Pean", "Vair", "Potent"]
     },
     "divisions": [
-        "Pale", "Fess", "Chevron", "Cross", "Saltire"
+        "Pale", "Fess", "Quarterly", "Cross", "Saltire", "Per Bend", "Per Bend Sinister",
+        "Per Fess", "Per Pale", "Per Saltire", "Gyronny"
     ],
     "charges": {
-        "animals": [
-            Charge("crow", "./assets/charges/crow.svg", "crow"),
-            Charge("eagle", "./assets/charges/eagle.svg", "eagle"),
-        ],
-        "objects": [
-            Charge("tower", "./assets/charges/tower.svg", "tower"),
-            Charge("cross moline", "./assets/charges/cross moline.svg", "cross moline"),
-            Charge("rose", "./assets/charges/rose.svg", "rose"),
-            Charge("scimitar", "./assets/charges/scimitar.svg", "scimitar"),
-        ]
+        "loaded": load_charges()
     },
     "ordinaries": [
-        "Chief", "Bend", "Fess", "Pale", "Chevron", "Cross", "Saltire"
-    ],
-    "rules_of_tincture": {
-        "color_on_color": False,
-        "metal_on_metal": False
-    }
+        "Chief", "Bend", "Fess", "Pale", "Cross", "Saltire", "Pile", "Pall", "Bordure", "Orle", "Flaunches"
+    ]
 }
-
-# Rule of Tincture: A function to check that metal is not placed on metal and color is not placed on color
-def check_rule_of_tincture(tincture1, tincture2):
-    colors = heraldic_elements['tinctures']['colors']
-    metals = heraldic_elements['tinctures']['metals']
-    if (tincture1 in colors and tincture2 in colors) or \
-       (tincture1 in metals and tincture2 in metals):
-        return False
-    return True
-
-# Select a random element from a list, optionally excluding some elements
-def select_element(elements, avoid_list=None):
-    avoid_list = avoid_list or []
-    choices = [element for element in elements if element not in avoid_list]
-    return random.choice(choices) if choices else None
-
-# Example usage of selecting a charge
-selected_charge = select_element(heraldic_elements['charges']['animals'] + heraldic_elements['charges']['objects'])
-print(f"Selected charge: {selected_charge}")
-
-# Example usage of rule of tincture
-tincture1 = select_element(heraldic_elements['tinctures']['colors'] + heraldic_elements['tinctures']['metals'])
-tincture2 = select_element(heraldic_elements['tinctures']['colors'] + heraldic_elements['tinctures']['metals'])
-while not check_rule_of_tincture(tincture1, tincture2):
-    tincture2 = select_element(heraldic_elements['tinctures']['colors'] + heraldic_elements['tinctures']['metals'])
-print(f"Selected tinctures: {tincture1}, {tincture2} - Rule of tincture check: {check_rule_of_tincture(tincture1, tincture2)}")
-
-# ... Other functions or classes for divisions, ordinaries, etc. can be similarly defined.
