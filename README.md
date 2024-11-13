@@ -5,6 +5,7 @@
   <img src="resources/examples/coa gen example.png" alt="COA Gen Example">
 </p>
 
+> Current version: 0.1.0
 
 ## Table of Contents
 - [Installation](#installation)
@@ -134,11 +135,9 @@ coa-generator/
 ```
 ## Development
 Developers interested in contributing should refer to the [Development Guide](DEVELOPMENT.md).
-#TODO
 
 ## Contributing
 If you want to contribute to the Coats of Arms Generator, please review the [`CONTRIBUTING.md`](CONTRIBUTING.md).
-#TODO
 
 ## Versioning
 For versioning, I use [SemVer](https://semver.org/).
@@ -151,19 +150,32 @@ For versioning, I use [SemVer](https://semver.org/).
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
 
-## Screenshots / Demo
-![Coat of Arms Example](path-to-screenshot.png)
-#TODO
-
-Add more screenshots or a video demo if possible.
-
-## FAQs / Common Issues
-Here you can list common issues and their solutions.
-#TODO
-
 ## Changelog
 For detailed release notes, see the [CHANGELOG](CHANGELOG).
-#TODO
+* 0.0.1: 
+  - Basic project structure established.
+  - Rudimentary coat of arms generation (very early stage - not able to really do much at all nor follow any rules).
+  - Utilities for installing requirements, ensuring correct directory structure, and automated cleaning up of the project.
+
+* 0.0.2:
+  - Improvement to coat of arms generation.
+  - Bug fixes
+    - Rendering not working or appearing at all.
+    - Incorrect access of healdic elements within the following files: 'coat_of_arms.py' and 'hearaldic_elements.py'.
+
+* 0.1.0:
+    - Improvements:
+        - Greatly expanded coat of arms generation (new divisions, ordinaries, and charges).
+        - Added charges (utilizes .svg as the standard format).
+        - Vastly improved project structure and cleaned up code base.
+        - Version 0.1.0 is capable of being ran from either command line and/or using the run_windows.bat (a new cosole window appears with generation information and a window showing the generated coat of arms is presented to the user).
+    - Bugs:
+        - Still testing current version.
+        - Several rules are not fully followed or behaving as desired.
+        - Frequent issues with generation behavior (such as generating 'boring' and/or 'blank' coats of arms).
+    - Changes:
+        - Project Structure.
+        - Coat of arms generation and hearaldic element rules.
 
 ## Support or Contact
 For support or inquiries, reach out to [jack_cooper01@yahoo.com](mailto:jack_cooper01@yahoo.com).
