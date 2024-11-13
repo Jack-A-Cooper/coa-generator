@@ -1,6 +1,11 @@
 # Coats of Arms Generator
 > A tool to create personalized coats of arms with historical heraldic rules.
 
+<p align="center">
+  <img src="resources/examples/coa gen example.png" alt="COA Gen Example">
+</p>
+
+
 ## Table of Contents
 - [Installation](#installation)
 - [Prerequisites](#prerequisites)
