@@ -68,31 +68,7 @@ Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage
 
       - `charges/`: Contains images or representations of heraldic charges (symbols used in coats of arms).
 
-      - `compartment (supporter's compartment)/`: Holds assets related to the compartment where supporters stand in a coat of arms.
-
-      - `crest (Crest of Arms)/`: Stores assets related to the crest, a decorative element above the shield in a coat of arms.
-
-      - `mantling/`: Contains assets related to mantling, a decorative cloak or drapery flowing from the helmet in a coat of arms.
-
-      - `motto/`: Holds assets related to mottos, phrases or slogans often displayed on a ribbon below the shield in a coat of arms.
-
-      - `ordinaries/`: Contains images or assets related to ordinaries, simple geometric shapes or lines used for division or decoration in a coat of arms.
-
-      - `pavilion/`: Stores assets related to pavilions, embellished tents or canopies, rarely found in English or Scots achievements.
-
-      - `ribbon, collar, or badge/`: Contains assets related to ribbons, collars, or badges that can encircle or depend from the shield in a coat of arms.
-
-      - `shield (division)/`: Holds images or assets related to the shield or divisions of the shield in a coat of arms.
-
-      - `tinctures/`: Contains assets related to tinctures, representing the colors and metals used in coats of arms.
-
-      - `torse (coronet)/`: Stores images or assets related to the torse, a twisted wreath or coronet from which the crest arises in a coat of arms.
-
-  - `data/`: Directory for storing data files or resources used by the project.
-
-  - `saved_coats_of_arms/`: Directory for saving or storing generated coats of arms created by the application.
-
-  - `tests/`: Directory for storing test cases or files related to testing the project's code.
+  - `saved/`: Directory for saving or storing generated coats of arms created by the application.
 
 - Various `.py` files: Python script files making up the project's source code, each serving a specific purpose.
 
@@ -125,25 +101,15 @@ Refer to the [user guide](USER_GUIDE.md) for more detailed instructions on usage
 ```
 coa-generator/
 │
+├── assets/
+│   └── charges/
+├── saved/
 ├── src/
 │   ├── __pycache__/
 │   │   ├── coat_of_arms.cpython-311.pyc
 │   │   ├── heraldic_elements.cpython-311.pyc
 │   │   └── user_interface.cpython-311.pyc
-│   ├── assets/
-│   │   ├── charges/
-│   │   ├── compartment (supporter's compartment)/
-│   │   ├── crest (Crest of Arms)/
-│   │   ├── mantling/
-│   │   ├── motto/
-│   │   ├── ordinaries/
-│   │   ├── pavilion/
-│   │   ├── ribbon, collar, or badge/
-│   │   ├── shield (division)/
-│   │   ├── tinctures/
-│   │   └── torse (coronet)/
-│   ├── data/
-│   ├── saved_coats_of_arms/
+│   ├── saved/
 │   ├── tests/
 │   ├── coat_of_arms.py
 │   ├── coat_of_arms_generator.py
@@ -180,7 +146,7 @@ For versioning, I use [SemVer](https://semver.org/).
 ## Authors and Acknowledgment
 - **Jack Alexander Cooper** - *Initial work* - [GitHub Profile](https://github.com/Jack-A-Cooper)
 
-***Special thanks to OpenAI's ChatGPT for providing AI assistance and guidance. Especially for research and automating the workflow when necessary.***
+***Special thanks to OpenAI's ChatGPT for providing AI assistance and guidance (in particular, the much improved model 'ChatGPT-4o'). Especially for research and automating the workflow when necessary.***
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
