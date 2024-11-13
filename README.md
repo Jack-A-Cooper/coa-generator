@@ -21,7 +21,7 @@
 ## Installation
 To install the Coats of Arms Generator, follow these steps:
 
-\```bash
+```bash
 ### Clone the repository
 git clone https://github.com/Jack-A-Cooper/coa-generator.git
 
@@ -33,7 +33,7 @@ cd coa-generator
 ./setup.sh
 #### On Windows:
 setup.bat
-\```
+```
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
