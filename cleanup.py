@@ -17,6 +17,13 @@ expected_structure = {
         'scimitar.svg',
         'tower.svg'
     ],
+    'resources': [
+        'examples'
+    ],
+    'resources/examples': [
+        '__init__.py',
+        'coa gen example.png'
+    ],
     'saved': [
         '__init__.py'
     ],
@@ -46,7 +53,7 @@ ignore_no_extension = {'LICENSE', 'CONTRIBUTING', 'CODE_OF_CONDUCT'}
 exclude_dirs = {'.git', '.venv', '__pycache__'}
 
 # Directories to preserve completely (do not delete any files within)
-preserve_dirs = {'saved', 'assets', 'assets/charges'}
+preserve_dirs = {'saved', 'assets', 'assets/charges', 'resources', 'resources/examples'}
 
 # Log file to record deleted files
 log_file = 'cleanup_log.txt'
@@ -59,7 +66,11 @@ def get_removal_list(directory, expected_contents, keepers=set()):
 
     for content in actual_contents:
         path_to_check = os.path.join(directory, content)
+        # Skip preserved directories and .png files in resources/examples
         if content in preserve_dirs or os.path.commonpath([path_to_check]) in preserve_dirs:
+            if content == "examples" and directory == os.path.join('.', 'resources'):
+                if path_to_check.endswith('.png'):
+                    continue
             continue
         if content not in expected_contents:
             if os.path.isdir(path_to_check) and content in exclude_dirs:
@@ -71,6 +82,8 @@ def get_removal_list(directory, expected_contents, keepers=set()):
                 removal_list.append(path_to_check)  # Add the directory itself
                 for root, dirs, files in os.walk(path_to_check):
                     for name in files:
+                        if root == os.path.join('.', 'resources', 'examples') and name.endswith('.png'):
+                            continue  # Preserve .png files in resources/examples
                         removal_list.append(os.path.join(root, name))
                     for name in dirs:
                         if name not in exclude_dirs:
@@ -95,6 +108,10 @@ def cleanup_directory(directory, expected_contents, keepers=set(), log_handle=No
         path_to_remove = os.path.join(directory, content)
         # Skip if it's in the preserve_dirs
         if content in preserve_dirs or os.path.commonpath([path_to_remove]) in preserve_dirs:
+            # Skip .png files within resources/examples
+            if content == "examples" and directory == os.path.join('.', 'resources'):
+                if path_to_remove.endswith('.png'):
+                    continue
             continue
         if any(content.endswith(ext) for ext in ignore_extensions) or content in ignore_no_extension:
             continue  # Skip ignored file types
